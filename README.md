@@ -1,69 +1,29 @@
-# DJS05 Project Brief: Building a Redux-Inspired Store for a Tally App
+[Loom Video:https://www.loom.com/share/a403546110bb429badb33223af8b6b59?sid=2de6d016-3b43-4504-852a-03ccbaf6dacd]
 
-In this challenge, you will venture into the realm of state management by constructing a Redux-inspired store to manage the state of a simple Tally App. Your primary goal is to manage the app's state changes efficiently, focusing on core functionalities like incrementing, decrementing, and resetting a counter. Instead of rendering changes on the UI, you'll subscribe to state updates and log them to the console, highlighting the power of state management in applications.
+# Redux-inspired Store Implementation
 
-## Objective
-Create a minimalistic, Redux-inspired store to manage and log the state of a counting Tally App. Your implementation will not involve UI rendering; instead, it will use console logs to demonstrate state management effectively.
+## How to Run the Code
 
-Observer Pattern resource from Refactoring Guru: https://refactoring.guru/design-patterns/observer
+1. Ensure you have Node.js installed on your machine.
+2. Create a file named `store.js` and copy the JavaScript code from the      implementation section into this file.
+3. Open a terminal and navigate to the directory where `store.js` is located.
+4. Run the following command to execute the code:
 
-## User Stories (Gherkin Syntax)
-Your challenge will encompass the following scenarios, tested through your store's implementation:
+   ```bash
+   node store.js
 
-### SCENARIO 1: Initial State Verification
-```
-GIVEN no interactions have been performed yet
-WHEN the “getState” method is run
-AND the result is logged to the console
-AND the browser console is open
-THEN the state should show a count of 0
-```
+## Overview of the Approach
 
-### SCENARIO 2: Incrementing the Counter
-```
-GIVEN no interactions have been performed yet
-WHEN an “ADD” action is dispatched
-AND another “ADD” action is dispatched
-AND the browser console is open
-THEN the state should show a count of 2
-```
+This implementation creates a simple Redux-inspired store with the following functionalities:
 
-### SCENARIO 3: Decrementing the Counter
-```
-GIVEN the current count in the state is 2
-WHEN a “SUBTRACT” action is dispatched
-AND the browser console is open
-THEN the state should display a count of 1
-```
+`getState`: Returns the current state of the store.
+`dispatch`: Takes an action and updates the state based on the action type.
+`subscribe`: Accepts a function that gets called whenever the state changes.
 
-### SCENARIO 4: Resetting the Counter
-```
-GIVEN the current count in the state is 1
-WHEN a “RESET” action is dispatched
-AND the browser console is open
-THEN the state should display a count of 0
-```
+The reducer function handles three types of actions: ADD, SUBTRACT, and RESET, and updates the state accordingly.
 
-## Requirements
-- **Implement a Global Store**: Create a Redux-inspired store that holds the state of the tally counter. The store should have the ability to dispatch actions and subscribe to state changes.
-- **State Management Functions**:
-  - **getState**: Returns the current state.
-  - **dispatch**: Takes an action (e.g., ADD, SUBTRACT, RESET) and updates the state accordingly.
-  - **subscribe**: Accepts a function that gets called whenever the state changes. This function should log the new state to the console.
-- **No UI Rendering**: This challenge focuses on state management without the complexity of UI rendering. All state changes should be observable through console logs.
-- **Functional Programming Principles**: Draw upon functional programming concepts as illustrated in the reference videos. While Redux is the inspiration, you're encouraged to apply these principles creatively in your implementation.
+## Challenges faced
 
-## Submission Guidelines
-Your submission should consist of a JavaScript file(s) that encapsulate your Redux-inspired store and the logic for dispatching actions and subscribing to changes. Include a README.md file explaining:
-- How to run your code.
-- A brief overview of your approach.
-- Any challenges you faced and how you overcame them.
-
-Ensure your code is well-commented and adheres to best practices for readability and maintainability.
-
-## Evaluation Criteria
-- **Correctness**: Your implementation should correctly handle the scenarios as outlined in the user stories.
-- **Code Quality**: Use of functional programming principles, clear naming conventions, and code organization.
-- **Documentation**: Clarity of your approach and reflections in the README.md.
-
-This challenge is an excellent opportunity to demonstrate your understanding of state management concepts and functional programming principles. Good luck!
+1. Ensuring the correct order of state updates when dispatching multiple actions   consecutively.
+2. Keeping the implementation simple and focused on state management without involving UI rendering.
+3. Making sure the subscription mechanism works correctly and logs the new state every time it changes.
