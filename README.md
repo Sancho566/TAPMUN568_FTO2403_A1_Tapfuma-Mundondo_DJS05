@@ -1,5 +1,3 @@
-[Loom Video:https://www.loom.com/share/a403546110bb429badb33223af8b6b59?sid=2de6d016-3b43-4504-852a-03ccbaf6dacd]
-
 # Redux-inspired Store Implementation
 
 ## How to Run the Code
